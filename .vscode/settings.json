@@ -1,0 +1,34 @@
+{
+  "window.zoomLevel": 0,
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "python.linting.banditEnabled": false,
+  "terminal.integrated.shell.windows": "C:\\windows\\System32\\cmd.exe",
+  "files.associations": {
+    "*.py": "python"
+  },
+  "[python]": {},
+  "terminal.integrated.rendererType": "dom",
+  "terminal.explorerKind": "external",
+  "python.dataScience.sendSelectionToInteractiveWindow": true,
+  "python.dataScience.askForKernelRestart": false,
+  "workbench.colorTheme": "Eva Dark Bold",
+  "workbench.sideBar.location": "right",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "java.configuration.checkProjectSettingsExclusions": false,
+  "python.pythonPath": "venv\\Scripts\\python.exe",
+  "python.jediEnabled": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "python.linting.pylintArgs": [
+    "--load-plugins=pylint_django",
+    "--disable=missing-docstring",
+    "--disable=trailing-whitespace",
+    "--disable=fixme"
+  ],
+  "python.linting.pydocstyleArgs": [
+    "--ignore=D400",
+    "--ignore=D4"
+  ]
+}
