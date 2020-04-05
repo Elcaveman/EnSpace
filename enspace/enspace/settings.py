@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
-
+project_name = 'enspace'
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -120,6 +120,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+def cwd():
+    #current workind directory
+    def normal_slash(text):
+        clean = ''
+        for chara in text:
+            if chara =="\\":
+                clean += '/'
+            else:
+                clean += chara
+        return clean
+    return normal_slash(os.getcwd())
+
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR , '/static/')
-MEDIA_ROOT = os.path.join(BASE_DIR , '/media/')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+MEDIA_ROOT = cwd() +"/%s/"%project_name + 'media/'
+MEDIA_URL = '/media/'
