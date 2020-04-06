@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
+
+# TODO: custom Manager
 class LearningObject(models.Model):
     #informations about the post owner
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -18,9 +19,14 @@ class LearningObject(models.Model):
     semester = models.IntegerField()
     modulus = models.CharField(max_length=100)
     element = models.CharField(max_length=50)
+    #manager
 
     def __str__(self):
         return self.title
+
+    # @classmethod
+    # def recently_published(cls):
+    #     return LearningObjectManager().all()
     #todo: optimizations:
     #make a model where the modules element is the PK
     #and get using it the "choices" for a drop list in the forms

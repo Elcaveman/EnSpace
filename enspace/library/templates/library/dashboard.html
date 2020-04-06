@@ -1,0 +1,26 @@
+{% extends '/library/main.html' %}
+
+{% block.super Content %}
+    {% for object in recent_learning_objects %}
+    <!--TODO need to learn how to use block content + context  -->
+    <div class="card card-lesson">
+        <a href="{% url 'library:item_detail' object.id %}">
+        <img loading="lazy" src="{{ object.illustration.url }}">
+        </a>
+        <div class="card-content">
+            <a href="{% url 'library:item_detail' object.id %}">
+                <h3>{{ object.title }}</h3>
+            </a>
+
+            <p>{{ object.description }}</p>    
+            <a href="#"><span class="tag tag-sm">#{{ object.owner }}</span></a>
+            <a href="#"><span class="tag tag-sm">#{{ object.modulus }}</span></a>
+            <a href="#"><span class="tag tag-sm">#{{ object.element }}</span></a>               
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
+    
+
+    
+</div>

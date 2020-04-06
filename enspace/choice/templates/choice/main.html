@@ -17,15 +17,17 @@
     
     <div class="apps-container">
         {% for app in Applications %}
-        <div class="app-wrapper">
-            <div class="app-img">
-                <img src="{{ app.illustration.url }}"" alt="student">
+        <a href="{{ app.get_app_name }}">
+            <div class="app-wrapper">
+                <div class="app-img">
+                    <img src="{{ app.illustration.url }}"" alt="student">
+                </div>
+                <div class="app-description">
+                    <h1>{{ app.title }}</h1>
+                    <h2>{{ app.description }}</h2>
+                </div>
             </div>
-            <div class="app-description">
-                <h1>{{ app.title }}</h1>
-                <h2>{{ app.description }}</h2>
-            </div>
-        </div>
+        </a>
         {% endfor %}
     </div>
 </body>
